@@ -42,17 +42,30 @@ bool render_status(void) {
 
     switch (get_highest_layer(layer_state)) {
         case 0:
-            oled_write_P(PSTR("BASE\n"), false);
+            oled_write_P(PSTR("Base\n"), false);
             break;
         case 1:
-            oled_write_P(PSTR("LOWER\n"), false);
+            oled_write_P(PSTR("Alt Base\n"), false);
             break;
         case 2:
-            oled_write_P(PSTR("RAISE\n"), false);
+            oled_write_P(PSTR("Num\n"), false);
             break;
         case 3:
-            oled_write_P(PSTR("ADJUST\n"), false);
+            oled_write_P(PSTR("Alt Num\n"), false);
             break;            
+        case 4:
+            oled_write_P(PSTR("Sym\n"), false);
+            break;    
+        case 5:
+            oled_write_P(PSTR("Dead keys\n"), false);
+            break;    
+        case 6:
+            oled_write_P(PSTR("Nav\n"), false);
+            break;    
+        case 7:
+            oled_write_P(PSTR("Fun\n"), false);
+            break;    
+
         default:
             // Or use the write_ln shortcut over adding '\n' to the end of your string
             oled_write_ln_P(PSTR("Undefined"), false);
